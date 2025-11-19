@@ -2,7 +2,9 @@
 set -euo pipefail
 
 touch /tmp/metrics
-miniserve --index /tmp/metrics &
+
+# serve metrics on all paths
+miniserve --spa --index /tmp/metrics &
 
 /usr/local/bin/update-metrics.sh
 
