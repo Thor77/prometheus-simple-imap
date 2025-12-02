@@ -17,7 +17,7 @@ poll $IMAP_HOST protocol IMAP
   folder INBOX
   keep
 " > "$tmpfile"
-output="$(fetchmail -c -f "$tmpfile")"
+output="$(fetchmail -c -f "$tmpfile" || true)"
 rm "$tmpfile"
 
 if [[ -z "$output" ]]; then
